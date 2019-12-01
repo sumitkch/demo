@@ -1,0 +1,47 @@
+dn: dc=example,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: example
+
+dn: ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# password : chaurasia
+dn: uid=sumit,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Sumit Chaurasia
+uid: sumit
+userPassword: {SHA}TUvsJC5am4vcdiUoGavapk6MF60=
+
+
+dn: cn=developers,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=sumit,ou=people,dc=example,dc=com
+
+dn: cn=managers,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=chaurasia,ou=people,dc=example,dc=com
+
+dn: cn=employees,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: employees
+ou: employee
+uniqueMember: uid=sumit,ou=people,dc=example,dc=com
